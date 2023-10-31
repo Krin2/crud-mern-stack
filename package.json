@@ -1,0 +1,23 @@
+{
+  "name": "crud-mern-stack",
+  "version": "1.0.0",
+  "description": "crud usando react, node, mongo y express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krin2/crud-mern-stack.git"
+  },
+  "author": "Marcos Frigerio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krin2/crud-mern-stack/issues"
+  },
+  "homepage": "https://github.com/Krin2/crud-mern-stack#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

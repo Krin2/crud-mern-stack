@@ -10,8 +10,8 @@ Curso para crear aplicacion usando MERN.
 El proyecto estara estructurado en dos carpetas principales, una para el cliente y otra para el servidor
 ```
 |__ CRUD-MERN-STACK
-        |___ cliente
-        |___ servidor
+|        |___ cliente
+|___ servidor
 
 ```
 # Instalacion de dependencias
