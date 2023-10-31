@@ -1,10 +1,10 @@
 # crud-mern-stack
 Curso para crear aplicacion usando MERN.
 
-- M MongoDB
-- E Express
-- R React
-- N Node
+- **M** - MongoDB
+- **E** - Express
+- **R** - React
+- **N** - Node
 
 # Estructura del proyecto
 El proyecto estara estructurado en dos carpetas principales, una para el cliente y otra para el servidor
@@ -27,9 +27,9 @@ npm install react-router-dom
 ```
 ## Servidor
 Se instalaron las siguientes dependencias:
-- *nodemon*: permite que la aplicacion se reinicie automaticamente cada vez que se detecta un cambio en el codigo
-- *express*: permite crear un servidor web
-- *mongoose*: permite la conexion con una base de datos de mongoDB  
+- **nodemon**: permite que la aplicacion se reinicie automaticamente cada vez que se detecta un cambio en el codigo
+- **express**: permite crear un servidor web
+- **mongoose**: permite la conexion con una base de datos de mongoDB  
 
 ```
 npm install mongoose express
