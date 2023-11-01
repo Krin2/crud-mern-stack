@@ -15,17 +15,17 @@ function AgregarUsuario() {
                 <div className='col-sm-6 offset-3'>
                     <div className='mb-3'>
                         <label htmlFor='nombre' className='form-label'>Nombre</label>
-                        <input type='text' className='form-control'> </input>
+                        <input type='text' className='form-control'/>
                     </div>
                     
                     <div className='mb-3'>
                         <label htmlFor='email' className='form-label'>E-mail</label>
-                        <input type='email' className='form-control'> </input>
+                        <input type='email' className='form-control'/>
                     </div>
                     
                     <div className='mb-3'>
                         <label htmlFor='telefono' className='form-label'>Telefono</label>
-                        <input type='text' className='form-control'> </input>
+                        <input type='text' className='form-control'/>
                     </div>
 
                     <button onClick={ agregarUsuario } className='btn btn-success'>Guardar usuario</button>
