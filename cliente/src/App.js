@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import ListaUsuarios from './ListaUsuarios';
 import AgregarUsuario from './AgregarUsuario';
@@ -21,7 +20,7 @@ function App() {
                 <a className="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="agregarusuario">Agregar Usuario</a>
+                <a className="nav-link" href="/agregarusuario">Agregar Usuario</a>
               </li>
             </ul>
           </div>

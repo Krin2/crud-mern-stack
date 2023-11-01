@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // crea la conexion
 // mongodb+srv://pokedex_user:contrasenia1@pokedexcluster.idzqtd4.mongodb.net/
-mongoose.connect('mongodb+srv://pokedex_user:contrasenia1@pokedexcluster.idzqtd4.mongodb.net/');
+mongoose.connect('mongodb+srv://pokedex_user:contrasenia1@pokedexcluster.idzqtd4.mongodb.net/crudmernstack');
 
 const objetoBd = mongoose.connection
 

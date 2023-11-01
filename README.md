@@ -16,6 +16,11 @@ El proyecto estara estructurado en dos carpetas principales, una para el cliente
 ```
 # Instalacion de dependencias
 ## Cliente
+Se instalaron las siguientes dependencias:
+- **create-react-app**: permite crear una aplicacion funcional de react para usar de template
+- **react-router-dom**: permite obtener las herramientas necesarias para crear rutas dentro de una pagina
+- **uniqid**: permite generar ids unicos
+- **axios**: permite crear rutas para manejar los diferentes endpoins de la pagina
 Para usar los comandos de React es necesario instalar la dependencia `create-react-app`
 ```
 npm install -g create-react-app
@@ -25,16 +30,19 @@ Para usar las rutas de react, es necesario instalar la dependencia `react-router
 ```
 npm install react-router-dom
 ```
+
 ## Servidor
 Se instalaron las siguientes dependencias:
 - **nodemon**: permite que la aplicacion se reinicie automaticamente cada vez que se detecta un cambio en el codigo
 - **express**: permite crear un servidor web
 - **mongoose**: permite la conexion con una base de datos de mongoDB  
+- **body-parser**: permite obtener los campos del body de un request
 
 ```
-npm install mongoose express
+npm install mongoose express body-parser
 npm install -D nodemon
 ```
+
 # Creacion del cliente usando React
 Para autogenerar la estructura del cliente usando React, ejecutar
 ´´´
@@ -65,3 +73,20 @@ Los pasos son los siguientes:
 1. crear instancia de express
 2. definir la ruta inicial 
 3. hacer que la instancia creada escuche algun puerto
+
+# Interaccion entre frontend y backend
+para lograr la comunicacion entre el backend y el frontend, se debe agregar un proxy en los `package.json` respectivos, haciendo mension de la url base del otro.
+en el caso del frontend, en el package.json dentro de cliente, se debe colocar
+```json
+{
+  ...
+  "proxy": "http://localhost:5000/"
+}
+```
+mientras que en el package.json del servidor se debe colocar 
+```json
+{
+  ...
+  "proxy": "http://localhost:3000/"
+}
+```

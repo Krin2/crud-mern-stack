@@ -9,7 +9,7 @@ const esquemaUsuario = new esquema({
     nombre: String,
     email: String,
     telefono: String,
-    idUsuario: String
+    idusuario: String
 })
 
 const ModeloUsuario = mongoose.model('usuarios', esquemaUsuario)
@@ -17,6 +17,26 @@ const ModeloUsuario = mongoose.model('usuarios', esquemaUsuario)
 module.exports = router
 
 // Definicion de rutas
+router.post('/agregarusuario', (req, res) => {
+    const { nombre, email, telefono, idusuario } = req.body
+
+    // Cargo los datos del modelo
+    const nuevoUsuario = new ModeloUsuario({
+        nombre: req.body.nombre,
+        email: req.body.email,
+        telefono: req.body.telefono,
+        idusuario: req.body.idusuario,
+    })
+
+    // Guardo los datos en MongoDB
+    nuevoUsuario.save().then(() => {
+        res.send('Usuario agregado correctamente')
+    }).catch((error) => {
+        res.send(`El usuario no pudo ser agregado: ${error}`)
+    })
+})
+
+// Ruta de prueba
 router.get('/hola-mundo', (req, res) => {
     res.end('Hola desde rutas de usuarios')
 })
