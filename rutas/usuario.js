@@ -17,6 +17,7 @@ const ModeloUsuario = mongoose.model('usuarios', esquemaUsuario)
 module.exports = router
 
 // Definicion de rutas
+// Agregar usuario
 router.post('/agregarusuario', (req, res) => {
     const { nombre, email, telefono, idusuario } = req.body
 
@@ -34,6 +35,15 @@ router.post('/agregarusuario', (req, res) => {
     }).catch((error) => {
         res.send(`El usuario no pudo ser agregado: ${error}`)
     })
+})
+
+// Obtener usuarios
+router.get('/obtenerusuarios', (req, res) => {
+    const usuarios = ModeloUsuario.find({})
+        .then( docs => {
+            res.send(docs)
+        })
+        .catch( error => res.send(error))
 })
 
 // Ruta de prueba
