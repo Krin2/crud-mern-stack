@@ -63,7 +63,15 @@ router.patch('/actualizarusuario', (req, res) => {
         .catch( error =>res.send(error.message))
 })
 
+// Borrar usuario
+router.post('/borrarusuario', (req, res) => {
+    ModeloUsuario.findOneAndDelete({ idusuario: req.body.idusuario })
+        .then(() => res.send('Datos borrados'))
+        .catch( error =>res.send(error.message))
+})
+
+
 // // Ruta de prueba
 // router.get('/hola-mundo', (req, res) => {
 //     res.end('Hola desde rutas de usuarios')
-// })
+// }

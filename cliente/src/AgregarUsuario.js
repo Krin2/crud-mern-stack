@@ -20,8 +20,6 @@ function AgregarUsuario() {
             idusuario: uniqid()
         }
 
-        console.log(usuario)
-
         // Envio los datos al servidor para que los guarde en la base de datos
         axios.post('/api/usuario/agregarusuario', usuario)
             .then( response => {

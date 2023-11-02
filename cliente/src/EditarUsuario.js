@@ -14,7 +14,6 @@ function EditarUsuario() {
     useEffect(() => {
         axios.post('/api/usuario/obtenerdatosusuario', { idusuario: params.idusuario })
             .then( response => {
-                console.log(response.data)
                 const { nombre, email, telefono } = response.data[0]
                 setNombre(nombre)
                 setEmail(email)
@@ -29,14 +28,13 @@ function EditarUsuario() {
             telefono,
             idusuario: params.idusuario
         }
-        console.log(usuario)
+
         axios.patch('/api/usuario/actualizarusuario', {
             nombre,
             email,
             telefono,
             idusuario: params.idusuario
         }).then( response => {
-                console.log(response.data)
                 alert(response.data)
             })
             .catch( error => {

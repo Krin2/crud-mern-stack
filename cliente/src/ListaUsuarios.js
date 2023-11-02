@@ -10,7 +10,6 @@ function ListaUsuarios() {
     useEffect(() => {
         axios.get('/api/usuario/obtenerusuarios')
             .then( response => {
-                console.log(response.data)
                 setDataUsuario(response.data)
             })
             .catch( error => console.log(error))
