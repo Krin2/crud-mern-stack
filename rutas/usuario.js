@@ -46,7 +46,24 @@ router.get('/obtenerusuarios', (req, res) => {
         .catch( error => res.send(error))
 })
 
-// Ruta de prueba
-router.get('/hola-mundo', (req, res) => {
-    res.end('Hola desde rutas de usuarios')
+// Obtener datos de un usuario
+router.post('/obtenerdatosusuario', (req, res) => {
+    const usuarios = ModeloUsuario.find({ idusuario: req.body.idusuario})
+        .then( docs => {
+            res.send(docs)
+        })
+        .catch( error => res.send(error))
 })
+
+// Actualizatr usuario
+router.patch('/actualizarusuario', (req, res) => {
+    const { idusuario, ...datos } = req.body
+    ModeloUsuario.findOneAndUpdate({ idusuario }, { ...datos } )
+        .then(() => res.send('Datos actualizados'))
+        .catch( error =>res.send(error.message))
+})
+
+// // Ruta de prueba
+// router.get('/hola-mundo', (req, res) => {
+//     res.end('Hola desde rutas de usuarios')
+// })

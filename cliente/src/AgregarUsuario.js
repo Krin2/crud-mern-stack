@@ -36,7 +36,7 @@ function AgregarUsuario() {
     return (
         <div className='container'>
             <div className='row'>
-                <h2 className='mt-4'> Crear un nuevoo usuario</h2>
+                <h2 className='mt-4'> Crear un nuevo usuario</h2>
             </div>
             <div className='row'>
                 <div className='col-sm-6 offset-3'>

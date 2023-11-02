@@ -43,4 +43,7 @@ Referencias:
 - `form-control`: es una etiqueta de bootstrap
 - `btn`:  le da formato al boton
 - `btn-success`: le da el color verde al boton
+- `btn-danger`: la da color rojo al boton
+- `list-group`: define una estructura de lista
+- `list-group-item`: define un item de la estructura de lista
 
