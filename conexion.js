@@ -1,8 +1,9 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 
 // crea la conexion
 // mongodb+srv://pokedex_user:contrasenia1@pokedexcluster.idzqtd4.mongodb.net/
-mongoose.connect('mongodb+srv://pokedex_user:contrasenia1@pokedexcluster.idzqtd4.mongodb.net/crudmernstack');
+mongoose.connect(process.env.CONEXION_MONGO);
 
 const objetoBd = mongoose.connection
 

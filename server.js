@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 
@@ -17,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: 'true' }))
 // Define el endpoint para usuario
 app.use('/api/usuario', rutaUsuario)
 
-const PUERTO = 5000
+const PUERTO = process.env.PUERTO || 5000
 // Especificar la ruta de inicio
 
 app.get('/', (req,res) => {

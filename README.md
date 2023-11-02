@@ -37,9 +37,11 @@ Se instalaron las siguientes dependencias:
 - **express**: permite crear un servidor web
 - **mongoose**: permite la conexion con una base de datos de mongoDB  
 - **body-parser**: permite obtener los campos del body de un request
+- **dotenv**: permite leer las constantes definidas en el archivo .env
+
 
 ```
-npm install mongoose express body-parser
+npm install mongoose express body-parser dotenv
 npm install -D nodemon
 ```
 
@@ -75,18 +77,20 @@ Los pasos son los siguientes:
 3. hacer que la instancia creada escuche algun puerto
 
 # Interaccion entre frontend y backend
-para lograr la comunicacion entre el backend y el frontend, se debe agregar un proxy en los `package.json` respectivos, haciendo mension de la url base del otro.
-en el caso del frontend, en el package.json dentro de cliente, se debe colocar
+para lograr la comunicacion entre el backend y el frontend, se debe agregar un proxy en el `package.json` del cliente, haciendo mension de la url base del otro.
+
 ```json
 {
   ...
   "proxy": "http://localhost:5000/"
 }
 ```
-mientras que en el package.json del servidor se debe colocar 
-```json
-{
-  ...
-  "proxy": "http://localhost:3000/"
-}
+
+# Correr el programa
+Antes de correr el programa se debe completar los datos del archivo .env
+```
+npm install
+npm run start
+cd cliente
+npm start
 ```

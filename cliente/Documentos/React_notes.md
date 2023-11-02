@@ -1,5 +1,5 @@
-# Notas acercva de React
-## Documentacion oficial
+# Notas acerca de React
+ [Documentacion oficial](https://es.react.dev/reference/react)
 
 
 ## Bases
@@ -71,7 +71,7 @@ En este caso, al apretar sobre el boton Editar, el link nos lleva a la url `/edi
 Este parametro es leido por el `useParams`
 
 # Hooks
-## useState
+- ## **useState**
  se crean uno por elemento que necesita manejar su estado.
  en el caso de agregar usuario, se manejan tres hooks, uno para el nombre, otro para el email y otro para el telefono
 
@@ -88,7 +88,7 @@ Para hacer referencia a estos elementos, se usa el valor `value` y los eventos d
 ```
 El evento `onChange` hace que react capte los cambios en el campo input y que a cada cambio llame a la funcion setNombre para actualizar su valor. el parametro enviado es `e` que hace referencia al elemento input, y `e.target.value` hace referencia al valor contenido en el campo input
 
-## useEffect
+- ## **useEffect**
 Se usa para sincronizar un componente con un sistema externo
 ```javascript
 const [dataUsuario, setDataUsuario] = useState([])
@@ -96,16 +96,37 @@ const [dataUsuario, setDataUsuario] = useState([])
 useEffect(() => {
     axios.get('/api/usuario/obtenerusuarios')
         .then( response => {
-            console.log(response.data)
             setDataUsuario(response.data)
         })
         .catch( error => console.log(error))
 }, [])
 ```
-## useParams
+- ## **useParams**
 Este hook se usa para obtener los parametros pasados en un request
 ```javascript
 const params = useParams()
+```
+
+- ## **useNavigate**
+Este hook se puede usar para navegar entre rutas. al pasarle un entero, el navigate avanza o retrocede por el historial.
+En este caso, al pasarle 0, la pagina se recarga y no se va a otra pagina. Ej:  `navigate(0)`
+
+Si en vez de 0 se ubiese pasado un -1, se volveria a la pagina anterior en el historial. Ej: `navigate(-1)`
+
+Si en vez de pasarle un entero se le pasa una url relatiba, el navigate ira a la ruta que se le pasa como parametro. Ej: `navigate('/about')`
+```javascript
+    const navigate = useNavigate()
+
+    function borrarUsuario(idusuario) {
+        axios.post('/api/usuario/borrarusuario', { idusuario })
+            .then( () => {
+                alert('Usuario borrado')
+                navigate(0)
+            })
+            .catch( error => {
+                console.log(error)
+            })
+    }
 ```
 
 # Comunicacion con el backend
